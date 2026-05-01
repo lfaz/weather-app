@@ -21,5 +21,6 @@ npm run preview   # preview the production build
 
 For a larger production application, I could use React Query for data fetching and caching, and Redux Toolkit for broader state management. For the simplicity and scope of this assignment, I chose a smaller custom hook approach to keep the implementation clear and avoid overcomplicating the app.
 
-- Some boilerplate code, CSS styling, icons, and test mocks were generated using Codex AI assistive tool.
-- The focus of the project was frontend structure, UI design, and application logic rather than manually writing every UI asset.
+Some boilerplate code, CSS styling, icons, and test mocks were generated using Codex AI assistive tool.
+
+The focus of the project was frontend structure, UI design, and application logic rather than manually writing every UI asset.
