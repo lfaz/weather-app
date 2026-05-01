@@ -1,0 +1,334 @@
+.card {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-3);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 1rem 3rem rgba(42, 74, 130, 0.12);
+}
+
+.transitioning .heroContent,
+.transitioning .metrics,
+.transitioning .forecastList {
+  animation: softRefresh 1s ease both;
+}
+
+.hero {
+  min-height: clamp(20rem, 44vw, 30rem);
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: var(--space-5);
+  overflow: hidden;
+  padding: 7.5rem var(--space-6) var(--space-6);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(135deg, rgba(53, 99, 233, 0.94) 0%, rgba(76, 201, 240, 0.88) 54%, rgba(255, 209, 102, 0.9) 100%);
+  color: white;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: end;
+  justify-items: start;
+}
+
+.location {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  color: white;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.location span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.condition {
+  margin: var(--space-3) 0 0;
+  color: white;
+  font-weight: var(--font-weight-bold);
+}
+
+.temperature {
+  margin: var(--space-5) 0 var(--space-2);
+  color: white;
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 0.9;
+}
+
+.observed {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: calc(var(--space-7) * -1) var(--space-5) 0;
+  position: relative;
+  z-index: 2;
+}
+
+.metric {
+  min-width: 10rem;
+  flex: 1;
+  min-height: 5.25rem;
+  display: grid;
+  align-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 0.75rem 2rem rgba(42, 74, 130, 0.1);
+  backdrop-filter: blur(1rem);
+}
+
+.metric span,
+.metric strong {
+  margin: 0;
+}
+
+.metric span {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+.metric strong {
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  line-height: 1.2;
+}
+
+.windMetric {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.windMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.windArrow {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(53, 99, 233, 0.12);
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+  transition: transform 240ms ease;
+}
+
+.north {
+  transform: rotate(0deg);
+}
+
+.northEast {
+  transform: rotate(45deg);
+}
+
+.east {
+  transform: rotate(90deg);
+}
+
+.southEast {
+  transform: rotate(135deg);
+}
+
+.south {
+  transform: rotate(180deg);
+}
+
+.southWest {
+  transform: rotate(225deg);
+}
+
+.west {
+  transform: rotate(270deg);
+}
+
+.northWest {
+  transform: rotate(315deg);
+}
+
+.forecastSection {
+  display: grid;
+  gap: var(--space-3);
+  padding: 0 var(--space-2) var(--space-2);
+}
+
+.forecastHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: 0 var(--space-2);
+}
+
+.forecastHeader h2,
+.forecastHeader span {
+  margin: 0;
+}
+
+.forecastHeader h2 {
+  color: var(--color-text);
+  font-size: var(--font-size-xl);
+  line-height: 1;
+}
+
+.forecastHeader span {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+.forecastButton {
+  min-height: 2.5rem;
+  padding: 0 var(--space-4);
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-accent), #4cc9f0);
+  color: white;
+  font-weight: var(--font-weight-bold);
+  box-shadow: 0 0.65rem 1.35rem rgba(53, 99, 233, 0.22);
+}
+
+.forecastList {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.forecastRow {
+  min-height: 5.5rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid transparent;
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(90deg, rgba(243, 248, 255, 0.94), rgba(255, 255, 255, 0.94)),
+    var(--color-surface);
+  box-shadow: inset 0 0 0 1px rgba(217, 230, 247, 0.8);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.forecastRow:hover {
+  transform: translateY(-0.1rem);
+  box-shadow:
+    inset 0 0 0 1px rgba(217, 230, 247, 0.9),
+    0 0.75rem 1.75rem rgba(42, 74, 130, 0.1);
+}
+
+.forecastDate,
+.forecastCondition,
+.forecastTemps,
+.highTemp,
+.lowTemp {
+  margin: 0;
+}
+
+.forecastDate {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+.forecastCondition {
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+.forecastTemps {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  white-space: nowrap;
+}
+
+.highTemp {
+  color: var(--color-text);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.lowTemp {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+}
+
+@keyframes softRefresh {
+  0% {
+    opacity: 0.58;
+    transform: translateY(0.35rem);
+    filter: blur(0.15rem);
+  }
+
+  55% {
+    opacity: 0.78;
+    transform: translateY(0.15rem);
+    filter: blur(0.06rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transitioning .heroContent,
+  .transitioning .metrics,
+  .transitioning .forecastSection {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    display: grid;
+    padding: 7.25rem var(--space-5) var(--space-5);
+  }
+
+  .metrics {
+    margin: calc(var(--space-5) * -1) var(--space-3) 0;
+  }
+
+  .forecastRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .forecastTemps {
+    justify-content: space-between;
+  }
+}

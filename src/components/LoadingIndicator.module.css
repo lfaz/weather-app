@@ -1,0 +1,31 @@
+.wrapper {
+  min-height: clamp(24rem, 54vw, 34rem);
+  display: grid;
+  place-items: center;
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(135deg, rgba(53, 99, 233, 0.92), rgba(76, 201, 240, 0.82), rgba(255, 209, 102, 0.9));
+  box-shadow: 0 1rem 3rem rgba(42, 74, 130, 0.12);
+}
+
+.spinner {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: block;
+  border: 0.35rem solid rgba(255, 255, 255, 0.34);
+  border-top-color: white;
+  border-radius: 999px;
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}

@@ -1,0 +1,103 @@
+.icon {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #ffe7a3, #ffb86b);
+}
+
+.icon span {
+  width: 1.45rem;
+  height: 1.45rem;
+  display: block;
+  border-radius: 999px;
+  background: #ffd166;
+  box-shadow: 0 0.45rem 1rem rgba(255, 184, 107, 0.38);
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.cloudy,
+.rain,
+.snow,
+.storm,
+.fog {
+  background: linear-gradient(135deg, #dbeafe, #a7d8ff);
+}
+
+.cloudy span,
+.rain span,
+.snow span,
+.storm span,
+.fog span {
+  width: 1.9rem;
+  height: 0.8rem;
+  margin-top: 0.5rem;
+  background: white;
+  box-shadow: none;
+}
+
+.cloudy span::before,
+.rain span::before,
+.snow span::before,
+.storm span::before,
+.fog span::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  left: 0.8rem;
+  top: 0.95rem;
+  border-radius: 999px;
+  background: white;
+}
+
+.rain::after {
+  width: 0.25rem;
+  height: 1rem;
+  left: 1.45rem;
+  bottom: 0.45rem;
+  border-radius: 999px;
+  background: #4cc9f0;
+  transform: rotate(18deg);
+}
+
+.snow::after {
+  width: 0.55rem;
+  height: 0.55rem;
+  left: 1.35rem;
+  bottom: 0.55rem;
+  border-radius: 999px;
+  background: white;
+}
+
+.storm::after {
+  width: 0.85rem;
+  height: 1.45rem;
+  left: 1.45rem;
+  bottom: 0.3rem;
+  background: #ffd166;
+  clip-path: polygon(48% 0, 100% 0, 62% 42%, 100% 42%, 22% 100%, 44% 54%, 0 54%);
+}
+
+.fog::after {
+  width: 2rem;
+  height: 0.85rem;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.86),
+    rgba(255, 255, 255, 0.86) 0.15rem,
+    transparent 0.15rem,
+    transparent 0.35rem
+  );
+}

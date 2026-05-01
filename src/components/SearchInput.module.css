@@ -1,0 +1,72 @@
+.form {
+  display: block;
+  padding: var(--space-2);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 1rem 2rem rgba(42, 74, 130, 0.14);
+  backdrop-filter: blur(1rem);
+}
+
+.label {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-2);
+}
+
+.input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0 var(--space-4);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--color-text);
+  outline: none;
+  box-shadow: none;
+}
+
+.input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 0.25rem rgba(53, 99, 233, 0.14);
+}
+
+.button {
+  min-width: 4rem;
+  min-height: 3rem;
+  padding: 0 var(--space-4);
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-accent), #4cc9f0);
+  color: white;
+  font-weight: var(--font-weight-bold);
+  box-shadow: 0 0.75rem 1.5rem rgba(53, 99, 233, 0.24);
+}
+
+.button:hover:not(:disabled) {
+  background: var(--color-accent-strong);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.68;
+}
+
+@media (max-width: 560px) {
+  .form {
+    border-radius: 1.25rem;
+  }
+
+  .controls {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}

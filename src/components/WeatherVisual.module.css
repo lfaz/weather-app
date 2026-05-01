@@ -1,0 +1,322 @@
+.visual {
+  width: min(18rem, 48vw);
+  aspect-ratio: 1;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.visual span {
+  position: absolute;
+  display: block;
+}
+
+.sun {
+  width: 46%;
+  aspect-ratio: 1;
+  top: 8%;
+  right: 8%;
+  border-radius: 999px;
+  background: #ffd166;
+  box-shadow: 0 1rem 4rem rgba(255, 209, 102, 0.5);
+}
+
+.active .sun {
+  animation: sunDrift 1s ease-in-out both;
+}
+
+.cloudLarge,
+.cloudSmall {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 1rem 2.5rem rgba(44, 62, 80, 0.16);
+}
+
+.cloudLarge {
+  width: 68%;
+  height: 24%;
+  left: 10%;
+  top: 45%;
+}
+
+.cloudLarge::before,
+.cloudLarge::after,
+.cloudSmall::before {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  background: inherit;
+}
+
+.cloudLarge::before {
+  width: 42%;
+  aspect-ratio: 1;
+  left: 16%;
+  bottom: 24%;
+}
+
+.cloudLarge::after {
+  width: 36%;
+  aspect-ratio: 1;
+  right: 12%;
+  bottom: 22%;
+}
+
+.cloudSmall {
+  width: 38%;
+  height: 15%;
+  right: 8%;
+  top: 37%;
+  opacity: 0.76;
+}
+
+.active .cloudLarge {
+  animation: cloudFloatLarge 1s ease-in-out both;
+}
+
+.active .cloudSmall {
+  animation: cloudFloatSmall 1s ease-in-out both;
+}
+
+.cloudSmall::before {
+  width: 40%;
+  aspect-ratio: 1;
+  left: 24%;
+  bottom: 22%;
+}
+
+.weatherMark,
+.weatherMarkSecondary {
+  width: 0.55rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: #4cc9f0;
+  transform: rotate(18deg);
+  opacity: 0;
+}
+
+.weatherMark {
+  left: 34%;
+  top: 68%;
+}
+
+.weatherMarkSecondary {
+  left: 55%;
+  top: 68%;
+}
+
+.horizon {
+  width: 80%;
+  height: 0.35rem;
+  left: 10%;
+  bottom: 10%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.active .horizon {
+  animation: horizonGlow 1s ease-in-out both;
+}
+
+.clear .cloudLarge,
+.clear .cloudSmall {
+  opacity: 0.14;
+}
+
+.cloudy .sun {
+  transform: translate(-12%, 10%) scale(0.88);
+}
+
+.rain .weatherMark,
+.rain .weatherMarkSecondary {
+  opacity: 1;
+}
+
+.active.rain .weatherMark,
+.active.rain .weatherMarkSecondary {
+  animation: rainDrop 0.6s ease-in infinite;
+}
+
+.snow .weatherMark,
+.snow .weatherMarkSecondary {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  background: #ffffff;
+  opacity: 1;
+  transform: none;
+}
+
+.active.snow .weatherMark,
+.active.snow .weatherMarkSecondary {
+  animation: snowFall 1s ease-in-out infinite;
+}
+
+.storm .sun {
+  background: #7c3aed;
+  box-shadow: 0 1rem 4rem rgba(124, 58, 237, 0.44);
+}
+
+.storm .weatherMark {
+  width: 1.7rem;
+  height: 4.4rem;
+  left: 43%;
+  top: 60%;
+  border-radius: 0.2rem;
+  background: #ffd166;
+  clip-path: polygon(48% 0, 100% 0, 62% 40%, 100% 40%, 28% 100%, 44% 54%, 0 54%);
+  opacity: 1;
+  transform: none;
+}
+
+.storm .weatherMarkSecondary {
+  opacity: 0;
+}
+
+.active.storm .weatherMark {
+  animation: lightningPulse 0.7s ease-in-out infinite;
+}
+
+.fog .sun {
+  opacity: 0.42;
+}
+
+.fog .cloudLarge,
+.fog .cloudSmall {
+  opacity: 0.55;
+}
+
+.fog .horizon {
+  height: 2rem;
+  bottom: 22%;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.68),
+    rgba(255, 255, 255, 0.68) 0.22rem,
+    transparent 0.22rem,
+    transparent 0.58rem
+  );
+}
+
+.active.fog .horizon {
+  animation: fogSlide 1s ease-in-out both;
+}
+
+@keyframes sunDrift {
+  0% {
+    transform: translate(1.25rem, -0.75rem) scale(0.86);
+    opacity: 0.72;
+  }
+
+  60% {
+    transform: translate(-0.3rem, 0.2rem) scale(1.04);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes cloudFloatLarge {
+  0% {
+    transform: translateX(-1.75rem);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cloudFloatSmall {
+  0% {
+    transform: translateX(1.5rem);
+    opacity: 0.28;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 0.76;
+  }
+}
+
+@keyframes horizonGlow {
+  0% {
+    transform: scaleX(0.72);
+    opacity: 0.28;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rainDrop {
+  0% {
+    transform: translateY(-0.4rem) rotate(18deg);
+  }
+
+  100% {
+    transform: translateY(0.6rem) rotate(18deg);
+  }
+}
+
+@keyframes snowFall {
+  0% {
+    transform: translateY(-0.35rem);
+  }
+
+  100% {
+    transform: translateY(0.45rem);
+  }
+}
+
+@keyframes lightningPulse {
+  0%,
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+
+  50% {
+    filter: brightness(1.35);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes fogSlide {
+  0% {
+    transform: translateX(-1rem);
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .active .sun,
+  .active .cloudLarge,
+  .active .cloudSmall,
+  .active .horizon,
+  .active.rain .weatherMark,
+  .active.rain .weatherMarkSecondary,
+  .active.snow .weatherMark,
+  .active.snow .weatherMarkSecondary,
+  .active.storm .weatherMark,
+  .active.fog .horizon {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .visual {
+    width: min(14rem, 70vw);
+    justify-self: center;
+  }
+}
