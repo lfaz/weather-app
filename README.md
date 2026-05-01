@@ -1,11 +1,13 @@
-## Setup
+## 🐳 Docker Setup
+
+From the project root (where Dockerfile is located), run:
 
 ```bash
-npm install
-npm run dev
+docker build -t weather-app .
+docker run -p 3000:80 weather-app
 ```
 
-Open the local URL printed by Vite, usually `http://localhost:5173`.
+Open browser with url: http://localhost:3000
 
 ## Scripts
 
